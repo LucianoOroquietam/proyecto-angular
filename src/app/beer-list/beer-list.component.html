@@ -1,0 +1,29 @@
+<h1>{{title_beers}}</h1>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Stock</th>
+        <th scope="col">Promocion</th>
+        <th scope="col">Imagen</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let beer of beers" [ngClass]="{'promocion': beer.promocion}">
+        <th scope="row">{{ beer.id }}</th>
+        <td>{{ beer.nombre }}</td>
+        <td>{{ beer.tipo }}</td>
+        <td>{{beer.precio | currency}}</td>
+        <td>
+          <span [ngClass]="{'badge rounded-pill text-bg-danger': beer.stock === 0}">
+            {{ beer.stock === 0 ? 'Sin stock' : beer.stock }}
+          </span>
+        </td>
+        <td>{{beer.promocion}}</td>
+        <td><img [src]="beer.img" [alt]="beer.nombre" style="width: 150px;"></td>
+      </tr>
+    </tbody>
+  </table>

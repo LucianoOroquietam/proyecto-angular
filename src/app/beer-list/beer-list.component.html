@@ -12,18 +12,25 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let beer of beers" [ngClass]="{'promocion': beer.promocion}">
-        <th scope="row">{{ beer.id }}</th>
-        <td>{{ beer.nombre }}</td>
-        <td>{{ beer.tipo }}</td>
-        <td>{{beer.precio | currency}}</td>
-        <td>
-          <span [ngClass]="{'badge rounded-pill text-bg-danger': beer.stock === 0}">
-            {{ beer.stock === 0 ? 'Sin stock' : beer.stock }}
-          </span>
-        </td>
-        <td>{{beer.promocion}}</td>
-        <td><img [src]="beer.img" [alt]="beer.nombre" style="width: 150px;"></td>
-      </tr>
+      @for(beer of beers; track beer.id){
+        <tr>
+          <th scope="row">{{ beer.id }}</th>
+          <td>{{ beer.nombre }}</td>
+          <td>{{ beer.tipo }}</td>
+          <td>{{beer.precio | currency}}</td>
+          @if (beer.stock > 0) {
+            <td>{{beer.stock}}</td>
+          }@else {
+            <td> <span class="badge rounded-pill text-bg-danger">Sin stock</span></td>
+          }
+          <td [ngClass]="{ 'promocion': beer.promocion }">{{beer.promocion}}</td>
+          <td><img [src]="beer.img" [alt]="beer.nombre" style="width: 150px;"></td>
+        </tr>
+      } @empty {
+        <tr>
+          <td colspan="4">No hay cervezas para mostrar</td>
+        </tr>
+      }
+   
     </tbody>
   </table>

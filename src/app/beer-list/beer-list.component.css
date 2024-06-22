@@ -2,7 +2,7 @@ h1{
     font-weight: bold;
 }
 
-tbody tr.promocion{
+.promocion{
     border: 2px solid green;
     background-color: lightgreen;
 }

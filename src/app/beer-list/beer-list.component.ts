@@ -22,7 +22,7 @@ export class BeerListComponent{
     { id: 1, nombre: 'Negra fuerte', tipo: 'Porter',precio: 2000 , stock: 100, promocion:false, img: 'assets/img/porter.jpg' },
     { id: 2, nombre: 'IPA', tipo: 'Ale', precio: 1500, stock: 50,promocion:true, img: 'assets/img/ipa.webp' },
     { id: 3, nombre: 'Blonde', tipo: 'Lager', precio: 1700,  stock: 75 ,promocion:false, img: 'assets/img/blonde.jpg'},
-    { id: 4, nombre: 'Stout', tipo: 'x', precio: 2200,  stock: 0 ,promocion:true, img: 'assets/img/stout.webp'},
+    { id: 4, nombre: 'Stout', tipo: 'Porter', precio: 2200,  stock: 0 ,promocion:true, img: 'assets/img/stout.webp'},
   ];
 
 

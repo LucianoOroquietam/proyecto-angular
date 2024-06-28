@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { BeerListComponent } from './beer-list/beer-list.component';
 import { CarritoComponent } from './carrito/carrito.component';
+//import { FormsModule } from '@angular/forms';
 
 /*@Component({
   //imports: [RouterOutlet],

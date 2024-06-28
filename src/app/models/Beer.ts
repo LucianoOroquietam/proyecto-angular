@@ -5,5 +5,6 @@ export interface Beer{
     precio: number,
     stock: number,
     img: String,
-    promocion: boolean
+    promocion: boolean,
+    cantidad: number,
   }

@@ -8,6 +8,7 @@
         <th scope="col">Precio</th>
         <th scope="col">Stock</th>
         <th scope="col">Promocion</th>
+        <th scope="col">Cantidad</th>
         <th scope="col">Imagen</th>
       </tr>
     </thead>
@@ -23,8 +24,13 @@
           }@else {
             <td> <span class="badge rounded-pill text-bg-danger">Sin stock</span></td>
           }
-          <td [ngClass]="{ 'promocion': beer.promocion }">{{beer.promocion}}</td>
-          <td><img [src]="beer.img" [alt]="beer.nombre" style="width: 150px;"></td>
+          <td [ngClass]="{ 'promocion': beer.promocion }">{{ beer.promocion ? '✔' : '❌' }}</td>
+          <td>
+            <button type="button" class="btn btn-dark" (click)="disminuirCantidad(beer)">-</button>
+            <input type="number" [(ngModel)]="beer.cantidad" (input)="onCantidadChange($event, beer)">
+            <button type="button" class="btn btn-dark" (click)="aumentarCantidad(beer)">+</button>
+          </td>
+          <td><img [src]="beer.img" [alt]="beer.nombre"></td>
         </tr>
       } @empty {
         <tr>

@@ -1,0 +1,62 @@
+:root{
+    --color-primario-oscuro:#1B2838;
+    --color-primario-intermedio:#21526D;
+    --color-primario-claro:#79ADCB;
+    --color-secundario-oscuro:#1173BA;
+    --color-secundario-intermedio:#1A9FFF;
+    --color-secundario-claro:#89CEFF;
+    --color-acento-oscuro:#4C6B22;
+    --color-acento-intermedio:#4F8B20;
+    --color-acento-claro:#59BF40;
+    --color-negro:#0E141B;
+    --color-negro-1:#1E1E1E;
+    --color-negro-2:#343436;
+    --color-negro-3:#424345;
+    --color-blanco:#CCD8E3;
+
+    --fuente-h1-h2-h3:Arial, Helvetica, sans-serif;
+    --tamanio-fuente-h1-A:2.5em;
+    --tamanio-fuente-h1-texto-logo:1.8rem;
+    --tamanio-fuente-h1-C:2em;
+    --grosor-fuente-h1-A-B: bold;
+
+    --fuente-logo: 'Cinzel', serif;
+
+    --tamanio-fuente-h2-A: 1.5em;
+    --tamanio-fuente-h2-B: 2.25rem;
+
+    --tamanio-fuente-h3-A: 1em;
+    --tamanio-fuente-h3-B: 0.75em;
+
+}
+
+footer .fat-footer{
+    flex-direction: row;
+    padding: 1em;
+    align-items: baseline;
+    gap: 14rem;
+   
+}
+    
+.fat-footer .pImagenes {
+    display: flex;
+    
+}
+
+.fit-footer-copyrigth, .fit-footer-p{
+    display: flex;
+    flex-direction: row;
+}
+
+.fat-footer-pLogo span, .fit-footer-copyrigth p span{
+    font-family: var(--fuente-logo);
+}
+
+.fit-footer-p{
+    margin-left: 44rem;
+    gap: 2rem;
+}
+
+.p-ffooter{
+   margin-left: 2.5rem;
+}

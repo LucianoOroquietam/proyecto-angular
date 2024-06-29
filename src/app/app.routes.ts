@@ -1,3 +1,18 @@
-import { Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from './app.routing.module';
+import { FormsModule } from '@angular/forms';
 
-export const routes: Routes = [];
+@NgModule({
+  declarations: [
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule
+  ],
+  exports: [],
+  providers: [],
+  
+})
+export class AppModule { }

@@ -4,6 +4,7 @@ import { BeerListComponent } from './beer-list/beer-list.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { CerveceriaAboutComponent } from './cerveceria-about/cerveceria-about.component';
 
+
 @Component({
   selector: 'app-root',
   standalone: true,

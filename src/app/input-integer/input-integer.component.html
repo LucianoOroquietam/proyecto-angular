@@ -1,0 +1,13 @@
+<div class="input-group">
+    <div class="input-group">
+      <button type="button" class="btn btn-dark" (click)="disminuirCantidad(beer)">
+        -
+      </button>
+    </div>
+    <input type="number" [(ngModel)]="beer.cantidad" (input)="onCantidadChange($event, beer)" />
+    <div class="input-group">
+      <button type="button" class="btn btn-dark" (click)="aumentarCantidad(beer)">
+        +
+      </button>
+    </div>
+  </div>

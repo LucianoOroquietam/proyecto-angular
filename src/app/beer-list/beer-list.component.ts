@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common'; 
 import { Beer } from '../models/Beer';
 import { FormsModule } from '@angular/forms';
+import { InputIntegerComponent } from '../input-integer/input-integer.component';
 
 
 
 @Component({
   selector: 'app-beer-list',
   standalone: true,
-  imports: [CommonModule,FormsModule],
+  imports: [CommonModule,FormsModule, InputIntegerComponent],
   templateUrl: './beer-list.component.html',
   styleUrl: './beer-list.component.css'
 })
@@ -17,7 +18,7 @@ import { FormsModule } from '@angular/forms';
 
 export class BeerListComponent{
   title_beers:String = 'Lista De Cervezas';
-  min_cantidad:number = 1;
+
 
   beers: Beer[] = [
     { id: 1, nombre: 'Porter', tipo: 'Porter',precio: 2000 , stock: 100, promocion:false, cantidad: 0, img: 'assets/img/porter.jpg' },
@@ -30,33 +31,7 @@ export class BeerListComponent{
   constructor(){}
  
 
-  aumentarCantidad(beer:Beer) : void {
-    if(beer.cantidad < beer.stock)
-      beer.cantidad++;
-  }
- 
-  disminuirCantidad(beer:Beer) : void {
-    if(beer.cantidad < this.min_cantidad)
-      beer.cantidad = 0;
-    else
-      beer.cantidad--;
-  }
-
-  onCantidadChange(event:any, beer:Beer) : void {
-
-    const valor = Number(event.target.value); 
-
-    console.log(event)
-    console.log(valor)
-
-    if (valor < this.min_cantidad) {
-      beer.cantidad = this.min_cantidad;
-    } else if (valor > beer.stock) {
-      beer.cantidad = beer.stock;
-    } else {
-      beer.cantidad = valor;
-    }
-  }
+  
 
 }
   

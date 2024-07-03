@@ -30,7 +30,8 @@
 
       <td>
       @if(beer.stock){
-          <app-input-integer [beer]="beer"></app-input-integer>
+          <app-input-integer [cantidad]="beer.cantidad" [max]="beer.stock" (maximoAlcance)="maxAlcance($event)"></app-input-integer>
+          <!--$event es el "string" que se encuentra en typescript-->
         }
       </td>
 

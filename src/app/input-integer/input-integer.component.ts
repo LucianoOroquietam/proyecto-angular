@@ -1,6 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Beer } from '../models/Beer';
 
 @Component({
   selector: 'app-input-integer',
@@ -9,36 +8,51 @@ import { Beer } from '../models/Beer';
   templateUrl: './input-integer.component.html',
   styleUrl: './input-integer.component.css'
 })
-export class InputIntegerComponent{
-  @Input() beer!: Beer; // Esto asume que `beer` será proporcionado por el componente padre
+export class InputIntegerComponent implements OnInit{
+  // Esto asume que `cantidad y max` seran proporcionados por el componente padre
+  @Input()
+  cantidad!: number; 
+  @Input() 
+  max!:number;
+  @Output() 
+  maximoAlcance: EventEmitter<string> = new EventEmitter<string>();
 
   min_cantidad:number = 1;
 
   constructor(){}
 
+  ngOnInit(){}
   
-  aumentarCantidad(beer:Beer) : void {
-    if(beer.cantidad < beer.stock)
-      beer.cantidad++;
+  aumentarCantidad() : void {
+    if(this.cantidad < this.max){
+        this.cantidad++;
+      
+    }
+    else{
+        this.maximoAlcance.emit("Se alcanzo el maximo");
+    }
   }
  
-  disminuirCantidad(beer:Beer) : void {
-    if(beer.cantidad < this.min_cantidad)
-      beer.cantidad = 0;
+  disminuirCantidad() : void {
+    if(this.cantidad < this.min_cantidad)
+      this.cantidad = 0;
     else
-      beer.cantidad--;
+      this.cantidad--;
+      
   }
 
-  onCantidadChange(event:any, beer:Beer) : void {
+  cambiarCantidad(event:any) : void {
 
     const valor = Number(event.target.value); 
 
     if (valor < this.min_cantidad) {
-      beer.cantidad = this.min_cantidad;
-    } else if (valor > beer.stock) {
-      beer.cantidad = beer.stock;
+      this.cantidad = this.min_cantidad;
+    } else if (valor > this.max) {
+      this.cantidad = this.max;
     } else {
-      beer.cantidad = valor;
+      this.cantidad = valor;
     }
+    
   }
+
 }

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Beer } from '../models/Beer';
 import { FormsModule } from '@angular/forms';
 import { InputIntegerComponent } from '../input-integer/input-integer.component';
+import { CarritoCervezaService } from '../carrito-cerveza.service';
 
 
 
@@ -18,7 +19,7 @@ import { InputIntegerComponent } from '../input-integer/input-integer.component'
 
 export class BeerListComponent{
   title_beers:String = 'Lista De Cervezas';
-
+  
 
   beers: Beer[] = [
     { id: 1, nombre: 'Porter', tipo: 'Porter',precio: 2000 , stock: 20, promocion:false, cantidad: 0, img: 'assets/img/porter.jpg' },
@@ -29,10 +30,17 @@ export class BeerListComponent{
   ];
 
 
-  constructor(){}
+  constructor(private carritoService: CarritoCervezaService){
+  }
+
+  addToCart(beer:Beer):void{
+    this.carritoService.addToCart(beer);
+    beer.stock-=beer.cantidad;
+    beer.cantidad = 0;
+  }
  
   maxAlcance(m:string){
-  alert(m)
+    alert(m)
  }
   
 

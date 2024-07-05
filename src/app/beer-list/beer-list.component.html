@@ -30,8 +30,9 @@
 
       <td>
       @if(beer.stock){
-          <app-input-integer [cantidad]="beer.cantidad" [max]="beer.stock" (maximoAlcance)="maxAlcance($event)"></app-input-integer>
+          <app-input-integer [(cantidad)]="beer.cantidad" [max]="beer.stock" (maximoAlcance)="maxAlcance($event)"></app-input-integer>
           <!--$event es el "string" que se encuentra en typescript-->
+          <button class="btn" (click)="addToCart(beer)">Comprar</button>
         }
       </td>
 

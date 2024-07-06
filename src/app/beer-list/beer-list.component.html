@@ -1,47 +1,66 @@
-<h1>{{ title_beers }}</h1>
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Id</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Tipo</th>
-      <th scope="col">Precio</th>
-      <th scope="col">Stock</th>
-      <th scope="col">Promocion</th>
-      <th scope="col">Cantidad</th>
-      <th scope="col">Imagen</th>
-    </tr>
-  </thead>
-  <tbody>
-    @for(beer of beers; track beer.id){
-    <tr>
-      <th scope="row">{{ beer.id }}</th>
-      <td>{{ beer.nombre }}</td>
-      <td>{{ beer.tipo }}</td>
-      <td>{{ beer.precio | currency }}</td>
-      @if (beer.stock > 0) {
-      <td class="hide">{{ beer.stock }}</td>
-      }@else {
-      <td><span class="badge rounded-pill text-bg-danger">Sin stock</span></td>
-      }
-      <td [ngClass]="{ promocion: beer.promocion }">
-        {{ beer.promocion ? "✔" : "❌" }}
-      </td>
+<div class="d-flex flex-column flex-md-row align-items-start"> <!-- Contenedor flex principal -->
+  <div class="title-and-table-container me-md-3 mb-2 mb-md-0"> <!-- Contenedor para el título y la tabla -->
+    <h1>{{ titulo_cervezas }}</h1>
 
-      <td>
-      @if(beer.stock){
-          <app-input-integer [(cantidad)]="beer.cantidad" [max]="beer.stock" (maximoAlcance)="maxAlcance($event)"></app-input-integer>
-          <!--$event es el "string" que se encuentra en typescript-->
-          <button class="btn" (click)="addToCart(beer)">Comprar</button>
+    <!-- Mensaje de error -->
+     @if (showError) {
+      <div class="alert alert-danger" role="alert">
+        No puede comprar 0 cervezas.
+      </div>
+     }
+   
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Tipo</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Stock</th>
+          <th scope="col">Promocion</th>
+          <th scope="col">Cantidad</th>
+          <th scope="col">Imagen</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for(beer of beers; track beer.id) {
+        <tr>
+          <th scope="row">{{ beer.id }}</th>
+          <td>{{ beer.nombre }}</td>
+          <td>{{ beer.tipo }}</td>
+          <td>{{ beer.precio | currency }}</td>
+          @if (beer.stock > 0) {
+          <td class="hide">{{ beer.stock }}</td>
+          } @else {
+          <td><span class="badge rounded-pill text-bg-danger">Sin stock</span></td>
+          }
+          <td [ngClass]="{ promocion: beer.promocion }">
+            {{ beer.promocion ? "✔" : "❌" }}
+          </td>
+          <td>
+            @if(beer.stock){
+            <app-input-integer [(cantidad)]="beer.cantidad" [max]="beer.stock" (maximoAlcance)="maxAlcance($event)"
+            (ngModelChange)="cantidadModificada()"></app-input-integer>
+            <button class="active" class="btn" (click)="addToCart(beer)">Comprar</button>
+            }
+          </td>
+          <td><img [src]="beer.img" [alt]="beer.nombre" /></td>
+        </tr>
         }
-      </td>
+        @empty {
+        <tr>
+          <td colspan="8">No hay cervezas para mostrar</td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
 
-      <td><img [src]="beer.img" [alt]="beer.nombre" /></td>
-    </tr>
-    } @empty {
-    <tr>
-      <td colspan="4">No hay cervezas para mostrar</td>
-    </tr>
+  <div class="cart-container">
+    @if(showCart){
+      <app-carrito></app-carrito>
     }
-  </tbody>
-</table>
+      
+  </div>
+</div>

@@ -8,7 +8,25 @@
       </tr>
     </thead>
     <tbody>
+      @for(beer of listaCarrito; track beer.id){
       <tr>
+        <td>
+          {{beer.nombre}}
+        </td>
+        <td>
+          {{beer.cantidad}}
+        </td>
+        <td>
+          
+        </td>
+        
       </tr>
+      
+    }
     </tbody>
   </table>
+
+  <h3>Resumen de compra</h3>
+  <hr>
+  <p>Pagás: $12.103</p>
+  <p>Envio: <span class="badge text-bg-success">Gratis</span></p>

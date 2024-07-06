@@ -5,6 +5,7 @@ import { CarritoComponent } from './carrito/carrito.component';
 import { CerveceriaAboutComponent } from './cerveceria-about/cerveceria-about.component';
 
 
+
 @Component({
   selector: 'app-root',
   standalone: true,

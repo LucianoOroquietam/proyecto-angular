@@ -6,3 +6,55 @@ td.hide{
     content-visibility: hidden;
 }
 
+.title-and-table-container {
+    flex: 1 1 auto; /* Permitir que crezca y ocupe el espacio disponible */
+    overflow-x: auto; /* Permitir el desplazamiento horizontal si es necesario */
+  }
+  
+  .cart-container {
+    flex: 0 0 auto; /* No permitir que el carrito crezca más allá de su contenido */
+    margin-left: 20px; 
+  }
+
+
+  /* Estilos para el botón */
+button {
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Estilos para el contenedor del carrito */
+.cart-container {
+  margin-top: 20px;
+  flex: 1; /* Asegura que el carrito ocupe el espacio disponible */
+}
+
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+div p {
+  margin-top: 10px;
+  font-size: 18px;
+}
+/* Estilos para el mensaje de error */
+.alert-danger {
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  color: white;
+  background-color: #dc3545;
+}

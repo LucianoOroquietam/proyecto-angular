@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { InputIntegerComponent } from '../input-integer/input-integer.component';
 import { CarritoCervezaService } from '../carrito-cerveza.service';
 import { CarritoComponent } from "../carrito/carrito.component";
+import { MockCerveza } from '../models/mock-cerveza';
 
 
 
@@ -19,34 +20,30 @@ import { CarritoComponent } from "../carrito/carrito.component";
 
 
 
-export class BeerListComponent {
-  showCart: boolean = false;
-  showError: boolean = false;
+export class BeerListComponent implements OnInit {
+  mostrarCarrito: boolean = false;
+  mostrarError: boolean = false;
   titulo_cervezas: String = 'Lista De Cervezas';
   mostrarContenido: Boolean = false;
+  cervezas: any;
   
-  beers: Beer[] = [
-    { id: 1, nombre: 'Porter', tipo: 'Porter', precio: 2000, stock: 20, promocion: false, cantidad: 0, img: 'assets/img/porter.jpg' },
-    { id: 2, nombre: 'IPA', tipo: 'Ale', precio: 1500, stock: 15, promocion: true, cantidad: 0, img: 'assets/img/ipa.webp' },
-    { id: 3, nombre: 'Blonde', tipo: 'Lager', precio: 1700, stock: 10, promocion: true, cantidad: 0, img: 'assets/img/blonde.jpg' },
-    { id: 4, nombre: 'Stout', tipo: 'Porter', precio: 2200, stock: 0, promocion: false, cantidad: 0, img: 'assets/img/stout.webp' },
-    { id: 5, nombre: 'Stout', tipo: 'Porter', precio: 2200, stock: 0, promocion: false, cantidad: 0, img: 'assets/img/stout.webp' },
-  ];
-
   constructor(private carritoService: CarritoCervezaService) {
   }
+  ngOnInit(): void {
+    this.cervezas = MockCerveza;
+  }
 
-  addToCart(beer: Beer): void {
-    if (beer.cantidad > 0) {
-    this.carritoService.addToCart(beer);
-    beer.stock -= beer.cantidad;
-    this.showError = false;
+  addToCart(cerveza: Beer): void {
+    if (cerveza.cantidad > 0) {
+    this.carritoService.addToCart(cerveza);
+    cerveza.stock -= cerveza.cantidad;
+    this.mostrarError = false;
     this.actualizareVisibilidadCarrito();
-    beer.cantidad = 0;
+    cerveza.cantidad = 0;
     }else {
-      this.showError = true;
+      this.mostrarError = true;
       setTimeout(() => {
-        this.showError = false;
+        this.mostrarError = false;
       }, 3000);
     }
   }
@@ -56,12 +53,12 @@ export class BeerListComponent {
   }
 
   actualizareVisibilidadCarrito() {
-    this.showCart = this.beers.some(beer => beer.cantidad > 0);
+    this.mostrarCarrito = this.cervezas.some((cerveza: { cantidad: number; }) => cerveza.cantidad > 0);
     
   }
   cantidadModificada() {
     this.actualizareVisibilidadCarrito();
-    this.showError = false;
+    this.mostrarError = false;
   }
 
 }

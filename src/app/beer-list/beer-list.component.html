@@ -3,7 +3,7 @@
     <h1>{{ titulo_cervezas }}</h1>
 
     <!-- Mensaje de error -->
-     @if (showError) {
+     @if (mostrarError) {
       <div class="alert alert-danger" role="alert">
         No puede comprar 0 cervezas.
       </div>
@@ -24,28 +24,28 @@
         </tr>
       </thead>
       <tbody>
-        @for(beer of beers; track beer.id) {
+        @for(cerveza of cervezas; track cerveza.id) {
         <tr>
-          <th scope="row">{{ beer.id }}</th>
-          <td>{{ beer.nombre }}</td>
-          <td>{{ beer.tipo }}</td>
-          <td>{{ beer.precio | currency }}</td>
-          @if (beer.stock > 0) {
-          <td class="hide">{{ beer.stock }}</td>
+          <th scope="row">{{ cerveza.id }}</th>
+          <td>{{ cerveza.nombre }}</td>
+          <td>{{ cerveza.tipo }}</td>
+          <td>{{ cerveza.precio | currency }}</td>
+          @if (cerveza.stock > 0) {
+          <td class="hide">{{ cerveza.stock }}</td>
           } @else {
           <td><span class="badge rounded-pill text-bg-danger">Sin stock</span></td>
           }
-          <td [ngClass]="{ promocion: beer.promocion }">
-            {{ beer.promocion ? "✔" : "❌" }}
+          <td [ngClass]="{ promocion: cerveza.promocion }">
+            {{ cerveza.promocion ? "✔" : "❌" }}
           </td>
           <td>
-            @if(beer.stock){
-            <app-input-integer [(cantidad)]="beer.cantidad" [max]="beer.stock" (maximoAlcance)="maxAlcance($event)"
+            @if(cerveza.stock){
+            <app-input-integer [(cantidad)]="cerveza.cantidad" [max]="cerveza.stock" (maximoAlcance)="maxAlcance($event)"
             (ngModelChange)="cantidadModificada()"></app-input-integer>
-            <button class="active" class="btn" (click)="addToCart(beer)">Añadir al carrito</button>
+            <button class="active" class="btn" (click)="addToCart(cerveza)">Añadir al carrito</button>
             }
           </td>
-          <td><img [src]="beer.img" [alt]="beer.nombre" /></td>
+          <td><img [src]="cerveza.img" [alt]="cerveza.nombre" /></td>
         </tr>
         }
         @empty {
@@ -58,7 +58,7 @@
   </div>
 
   <div class="cart-container">
-    @if(showCart){
+    @if(mostrarCarrito){
       <app-carrito></app-carrito>
     }
       

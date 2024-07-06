@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, input } from '@angular/core';
 import { Beer } from './models/Beer';
 import { BehaviorSubject } from 'rxjs';
 
@@ -18,22 +18,17 @@ export class CarritoCervezaService {
   addToCart(beer: Beer) {
     // Encuentra si la cerveza ya existe en la listaCarrito
     let item: Beer | undefined = this._listaCarrito.find((v1) => v1.nombre === beer.nombre);
-    
-    console.log("Item encontrado:", item);
      
-    if (item == undefined) {
+    if (!item) {
       // item no encontrado, añadir cerveza a la lista
       this._listaCarrito.push({... beer});
       console.log(`Añadido al carrito: ${beer.nombre}`);
     } else {
-      if(item.cantidad > 0 || beer.cantidad > 0){
+      //si ya tenia ese item , le sumo a la cantidad que ya tenia, la nueva cantidad ingresada.
         item.cantidad+=beer.cantidad;
-      }
-      return;
     }
   
-    this.listaCarrito.next(this._listaCarrito);
+    this.listaCarrito.next(this._listaCarrito); // equivalente al emmit de eventos
     console.log("Estado actual del carrito:", this.listaCarrito);
   }
-  
 }

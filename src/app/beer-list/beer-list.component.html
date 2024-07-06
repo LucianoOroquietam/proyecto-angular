@@ -42,7 +42,7 @@
             @if(beer.stock){
             <app-input-integer [(cantidad)]="beer.cantidad" [max]="beer.stock" (maximoAlcance)="maxAlcance($event)"
             (ngModelChange)="cantidadModificada()"></app-input-integer>
-            <button class="active" class="btn" (click)="addToCart(beer)">Comprar</button>
+            <button class="active" class="btn" (click)="addToCart(beer)">Añadir al carrito</button>
             }
           </td>
           <td><img [src]="beer.img" [alt]="beer.nombre" /></td>

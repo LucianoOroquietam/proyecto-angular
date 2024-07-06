@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CarritoCervezaService } from '../carrito-cerveza.service';
 import { Beer } from '../models/Beer';
+import { Subscription } from 'rxjs/internal/Subscription';
+
 
 @Component({
   selector: 'app-carrito',
@@ -9,16 +11,23 @@ import { Beer } from '../models/Beer';
   templateUrl: './carrito.component.html',
   styleUrl: './carrito.component.css'
 })
-export class CarritoComponent implements OnInit{
+export class CarritoComponent implements OnInit, OnDestroy{
   titulo:String = "Carrito de compras";
-  listaCarrito: Beer[] = [];
+  listaCarrito: Beer[] =[];
+  private subscription: Subscription = new Subscription;
   
-  constructor(private carrito: CarritoCervezaService){
-    carrito.listaCarrito.subscribe((observable)=> this.listaCarrito = observable);
+  constructor(private carrito: CarritoCervezaService){}
+
+  ngOnInit(): void { 
+    this.carrito.listaCarrito.subscribe(beers => {
+      this.listaCarrito = beers; // Actualiza la propiedad local con los datos del Observable
+    });
   }
 
-  ngOnInit(): void {
-    
+  ngOnDestroy(): void {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 
 

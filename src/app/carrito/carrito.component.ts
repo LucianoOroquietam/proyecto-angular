@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CarritoCervezaService } from '../servicios/carrito-cerveza.service';
 import { Beer } from '../models/Beer';
-import { Subscription } from 'rxjs/internal/Subscription';
 import { CommonModule } from '@angular/common';
 import { Observable } from 'rxjs';
 
@@ -20,9 +19,7 @@ export class CarritoComponent implements OnInit{
   constructor(private carrito: CarritoCervezaService){
     this.listaCarrito$ = carrito.listaCarrito.asObservable();
   }
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {  }
 
 
 }

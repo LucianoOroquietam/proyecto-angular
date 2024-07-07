@@ -1,83 +1,79 @@
-<!-- Esqueleto principal de la aplicacion (todo lo que conforme el layout)-->
-<div>
-  <h1>{{title}}</h1>
-</div>
+        <div>
+            <h1>{{title}}</h1>
+        </div>
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">{{title}}</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" [routerLink]="['/']">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" [routerLink]="['/about']" >About</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">{{title}}</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" [routerLink]="['/']">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" [routerLink]="['/about']">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
-<main class="container">
-  <router-outlet></router-outlet>
-</main>
+        <main class="container">
+            <router-outlet></router-outlet>
+        </main>
+    
 
-<footer>
-  <div class="fat-footer">
-      <div>
-          <h2>Otras paginas</h2>
-          <p>Preguntas frecuentes</p>
-          <p>Terminos y Condiciones</p>
-          <p>Politica de Privacidad</p>
-          <p>Politica de Cookies</p>
-      </div>
+    <footer>
+        <div class="fat-footer">
+            <div>
+                <h2>Otras paginas</h2>
+                <p>Preguntas frecuentes</p>
+                <p>Terminos y Condiciones</p>
+                <p>Politica de Privacidad</p>
+                <p>Politica de Cookies</p>
+            </div>
 
-      <div>
-          <h2>Conectemos</h2>
-          <p>Siguenos en las siguientes redes sociales</p>
-          <div>
-              <img src="" alt="">
-              <img src="" alt="">
-              <img src="" alt="">
-              <img src="" alt="">
-              <img src="" alt="">
-          </div>    
-      </div>
+            <div>
+                <h2>Conectemos</h2>
+                <p>Siguenos en las siguientes redes sociales</p>
+                <div>
+                    <img src="" alt="">
+                    <img src="" alt="">
+                    <img src="" alt="">
+                    <img src="" alt="">
+                    <img src="" alt="">
+                </div>
+            </div>
 
-      <div>
-          <h2 class="">Sientete Libre De Contactarnos</h2>
-          <div class="pImagenes">
-              <img class="pTelefono" src="assets/img/iconos/iconoTelefono.svg" alt="">
-              <p class="fat-footer-pTelefono">+54 (0) 2281 578909</p>
-          </div>
-          
-          <div class="pImagenes">
-              <img class="pTelefono" src="assets/img/iconos/mail.svg" alt="">
-              <p class="fat-footer-pMail">cerveceria</p>
-          </div>
-          <div class="pImagenes">
-              <img style="width: 30px;" class="pTelefono" src="assets/img/iconos/logo blanco.svg" alt="">
-              <p class="fat-footer-pLogo"><span>{{title}}</span></p>
-          </div>
-      </div>
-      
-  </div>
-  
-  <div class="fit-footer">
-      
-      <div class="fit-footer-copyrigth">
-          <p>2024 Todos los derechos reservados © <span>Ceveceria {{title}}</span> </p>
-          <div class="fit-footer-p">
-              <a href="#" class="p-ffooter">Politicas de Privacidad</a>
-              <a href="#" class="p-ffooter">Politica de Cookies</a>
-              <a href="#" class="p-ffooter">Aviso Legal</a>
-          </div>   
-      </div>
-     
-  </div>
-  
-</footer>
+            <div>
+                <h2>Sientete Libre De Contactarnos</h2>
+                <div class="pImagenes">
+                    <img class="pTelefono" src="assets/img/iconos/iconoTelefono.svg" alt="">
+                    <p class="fat-footer-pTelefono">+54 (0) 2281 578909</p>
+                </div>
+
+                <div class="pImagenes">
+                    <img class="pTelefono" src="assets/img/iconos/mail.svg" alt="">
+                    <p class="fat-footer-pMail">cerveceria</p>
+                </div>
+                <div class="pImagenes">
+                    <img style="width: 30px;" class="pTelefono" src="assets/img/iconos/logo blanco.svg" alt="">
+                    <p class="fat-footer-pLogo"><span>{{title}}</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="fit-footer">
+            <div class="fit-footer-copyrigth">
+                <p>2024 Todos los derechos reservados © <span>Ceveceria {{title}}</span></p>
+                <div class="fit-footer-p">
+                    <a href="#" class="p-ffooter">Politicas de Privacidad</a>
+                    <a href="#" class="p-ffooter">Politica de Cookies</a>
+                    <a href="#" class="p-ffooter">Aviso Legal</a>
+                </div>
+            </div>
+        </div>
+    </footer>

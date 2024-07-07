@@ -1,0 +1,59 @@
+/* Fondo que oscurece el resto de la página */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+  }
+  
+  /* Aplicar desenfoque al contenido principal cuando el pop-up está visible */
+  .content-container.blur {
+    filter: blur(5px);
+    pointer-events: none; /* Evitar la interacción con el contenido */
+  }
+  
+  /*contenido principal se ve debajo del modal */
+  .content-container {
+    position: relative;
+    z-index: 1;
+  }
+  
+  
+  /* Contenedor del pop-up */
+  .modal-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 500px;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1050;
+    border-radius: 8px;
+  }
+  
+  /* Estilos adicionales para el contenido del pop-up */
+  .modal-header, .modal-body, .modal-footer {
+    margin: 0;
+    padding: 10px 20px;
+  }
+  
+  .modal-header {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .modal-footer {
+    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .modal-footer button {
+    margin-left: 10px;
+  }
+  

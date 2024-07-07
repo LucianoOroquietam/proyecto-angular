@@ -1,5 +1,15 @@
 
-footer .fat-footer{
+footer {
+    background-color: black; 
+    color: aliceblue; 
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer .fat-footer {
     display: flex;
     gap: 16rem;
     align-items: baseline;
@@ -7,27 +17,28 @@ footer .fat-footer{
     padding: 1rem;
     background-color: black;
     color: aliceblue;
+    max-height: max-content;
 }
-    
+
 .fat-footer .pImagenes {
     display: flex;
 }
 
-.fit-footer-copyrigth, .fit-footer-p{
+.fit-footer-copyrigth, .fit-footer-p {
     display: flex;
     flex-direction: row;
     background-color: rgb(117, 116, 116);
 }
 
-.fat-footer-pLogo span, .fit-footer-copyrigth p span{
+.fat-footer-pLogo span, .fit-footer-copyrigth p span {
     font-family: var(--fuente-logo);
 }
 
-.fit-footer-p{
+.fit-footer-p {
     margin-left: 48rem;
     gap: 2rem;
 }
 
-.p-ffooter{
-   margin-left: 2.5rem;
+.p-ffooter {
+    margin-left: 2.5rem;
 }

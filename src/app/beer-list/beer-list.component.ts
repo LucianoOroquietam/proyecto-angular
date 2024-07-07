@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 import { Beer } from '../models/Beer';
 import { FormsModule } from '@angular/forms';
 import { InputIntegerComponent } from '../input-integer/input-integer.component';
-import { CarritoCervezaService } from '../carrito-cerveza.service';
+import { CarritoCervezaService } from '../servicios/carrito-cerveza.service';
 import { CarritoComponent } from "../carrito/carrito.component";
 import { MockCerveza } from '../models/mock-cerveza';
+import { DatosCervezasService } from '../servicios/datos-cervezas.service';
 
 
 
@@ -25,13 +26,20 @@ export class BeerListComponent implements OnInit {
   mostrarError: boolean = false;
   titulo_cervezas: String = 'Lista De Cervezas';
   mostrarContenido: Boolean = false;
-  cervezas: any;
+  cervezasMock: any;
+  cervezasApi: Beer[] = [];
   
-  constructor(private carritoService: CarritoCervezaService) {
+  constructor(private carritoService: CarritoCervezaService, private ServicioDatosCerveza: DatosCervezasService) {
   }
   ngOnInit(): void {
-    this.cervezas = MockCerveza;
+    this.cervezasMock = MockCerveza;
+    this.ServicioDatosCerveza.obtenerCervezas().subscribe( data =>this.cervezasApi = data);
+   
   }
+/*
+  loadBeers() {
+    this.ServicioDatosCerveza.obtenerCervezas().subscribe( data =>this.cervezasApi = data);
+  }*/
 
   addToCart(cerveza: Beer): void {
     if (cerveza.cantidad > 0) {
@@ -53,7 +61,7 @@ export class BeerListComponent implements OnInit {
   }
 
   actualizareVisibilidadCarrito() {
-    this.mostrarCarrito = this.cervezas.some((cerveza: { cantidad: number; }) => cerveza.cantidad > 0);
+    this.mostrarCarrito = this.cervezasMock.some((cerveza: { cantidad: number; }) => cerveza.cantidad > 0);
     
   }
   cantidadModificada() {

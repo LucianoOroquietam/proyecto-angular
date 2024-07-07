@@ -1,5 +1,5 @@
-import { Injectable, input } from '@angular/core';
-import { Beer } from './models/Beer';
+import { Injectable } from '@angular/core';
+import { Beer } from '../models/Beer';
 import { BehaviorSubject } from 'rxjs';
 
 /**

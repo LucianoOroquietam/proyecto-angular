@@ -24,7 +24,7 @@
         </tr>
       </thead>
       <tbody>
-        @for(cerveza of cervezas; track cerveza.id) {
+        @for(cerveza of cervezasApi; track cerveza.id) {
         <tr>
           <th scope="row">{{ cerveza.id }}</th>
           <td>{{ cerveza.nombre }}</td>

@@ -1,3 +1,11 @@
+
+/* Archivo de estilos CSS */
+
+.custom-table {
+  --bs-table-bg: linear-gradient(45deg, rgba(179,220,237,1) 0%, rgba(41,184,229,1) 50%, rgba(188,224,238,1) 100%);
+}
+
+
 td img{
     width: 150px;
 }
@@ -58,3 +66,5 @@ div p {
   color: white;
   background-color: #dc3545;
 }
+
+

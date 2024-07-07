@@ -21,7 +21,7 @@ export class CarritoComponent implements OnInit{
     this.listaCarrito$ = carrito.listaCarrito.asObservable();
   }
   ngOnInit(): void {
-  
+
   }
 
 

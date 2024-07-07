@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { Beer } from '../models/Beer';
 
 const URL = 'https://6677082a145714a1bd738bd9.mockapi.io/api/beers';
@@ -16,6 +16,8 @@ export class DatosCervezasService {
 
 
   public obtenerCervezas(): Observable<Beer[]>{
-    return this.http.get<Beer[]>(URL);  
+    return this.http.get<Beer[]>(URL).pipe(
+      tap((cervezas: Beer[] ) =>  cervezas.forEach(cerveza => cerveza.cantidad)));  
   }
 }
+//cervezas.forEach(cerveza => cerveza.cantidad)

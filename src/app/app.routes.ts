@@ -13,9 +13,7 @@ import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/
     HttpClientModule,
   ],
   exports: [],
-  providers: [provideHttpClient(
-    withFetch() // Aquí se habilita `fetch` para `HttpClient`
-  )],
+  providers: [],
   bootstrap: []
   
 })

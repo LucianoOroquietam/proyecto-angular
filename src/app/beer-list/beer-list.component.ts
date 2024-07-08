@@ -24,29 +24,38 @@ export class BeerListComponent implements OnInit {
   mostrarContenido: boolean = false;
   cervezasMock: Beer[] = [];
   cervezasApi: Beer[] = [];
-  siEdadVerificada:boolean = false; 
-  
-  constructor(private carritoService: CarritoCervezaService, private ServicioDatosCerveza: DatosCervezasService) {}
-  
+  siEdadVerificada: boolean = false;
+
+  constructor(private carritoService: CarritoCervezaService, private ServicioDatosCerveza: DatosCervezasService) { }
+
   ngOnInit(): void {
     this.cervezasMock = MockCerveza;
-    this.ServicioDatosCerveza.obtenerCervezas().subscribe( data =>this.cervezasApi = data);
+    this.ServicioDatosCerveza.obtenerCervezas().subscribe(data => this.cervezasApi = data);
+    if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
+      let edadVerificada = localStorage.getItem('edadVerificada');
+      if (edadVerificada === 'true') {
+        this.siEdadVerificada = true;
+      }
+    }
   }
 
   // Método que se ejecuta cuando el usuario confirma su edad
   verificarEdad() {
-    this.siEdadVerificada = true;
+    if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
+      this.siEdadVerificada = true;
+      localStorage.setItem('edadVerificada', 'true');
+    }
   }
 
 
   addToCart(cerveza: Beer): void {
     if (cerveza.cantidad > 0) {
-    this.carritoService.addToCart(cerveza);
-    cerveza.stock -= cerveza.cantidad;
-    this.mostrarError = false;
-    this.actualizareVisibilidadCarrito();
-    cerveza.cantidad = 0;
-    }else {
+      this.carritoService.addToCart(cerveza);
+      cerveza.stock -= cerveza.cantidad;
+      this.mostrarError = false;
+      this.actualizareVisibilidadCarrito();
+      cerveza.cantidad = 0;
+    } else {
       this.mostrarError = true;
       setTimeout(() => {
         this.mostrarError = false;

@@ -11,7 +11,7 @@ const apiUrl = 'https://6677082a145714a1bd738bd9.mockapi.io/api/beers';
 export class DatosCervezasService {
 
   constructor(private http:HttpClient) { }
-
+  
   obtenerCervezas(): Observable<Beer[]>{
      return this.http.get<Beer[]>(apiUrl).pipe(
       tap((cervezas: Beer[]) => {

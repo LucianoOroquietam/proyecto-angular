@@ -24,5 +24,7 @@
 
   <h3>Resumen de compra</h3>
   <hr>
-  <p>Pagás: $12.103</p>
-  <p>Envio: <span class="badge text-bg-success">Gratis</span></p>
+  <div *ngIf="(totalCarrito$ | async) as totalCarrito">
+    <p>Pagás: {{ totalCarrito | currency }}</p>
+    <p>Envio: <span class="badge text-bg-success">Gratis</span></p>
+  </div>

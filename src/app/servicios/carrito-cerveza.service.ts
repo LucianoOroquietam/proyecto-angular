@@ -12,8 +12,13 @@ import { BehaviorSubject } from 'rxjs';
 export class CarritoCervezaService {
   private _listaCarrito: Beer[] = [];
   listaCarrito: BehaviorSubject<Beer[]> = new BehaviorSubject(this._listaCarrito);
+  private totalCarrito: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
   constructor() { }
+
+  get totalCarrito$() {
+    return this.totalCarrito.asObservable();
+  }
 
   addToCart(beer: Beer) {
     // Encuentra si la cerveza ya existe en la listaCarrito
@@ -29,6 +34,11 @@ export class CarritoCervezaService {
     }
   
     this.listaCarrito.next(this._listaCarrito); // equivalente al emmit de eventos
-    console.log("Estado actual del carrito:", this.listaCarrito);
+    this.calcularTotal();
+  }
+  
+  private calcularTotal() {
+    const total = this._listaCarrito.reduce((sum, item) => sum + (item.precio * item.cantidad), 0);
+    this.totalCarrito.next(total);
   }
 }

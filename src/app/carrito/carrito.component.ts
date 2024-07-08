@@ -15,9 +15,12 @@ import { Observable } from 'rxjs';
 export class CarritoComponent implements OnInit{
   titulo:String = "Carrito de compras";
   listaCarrito$: Observable<Beer[]>;
+  totalCarrito$: Observable<number>;
+
   
-  constructor(private carrito: CarritoCervezaService){
-    this.listaCarrito$ = carrito.listaCarrito.asObservable();
+  constructor(private carritoService: CarritoCervezaService){
+    this.listaCarrito$ = carritoService.listaCarrito.asObservable();
+    this.totalCarrito$ = carritoService.totalCarrito$;
   }
   ngOnInit(): void {  }
 

@@ -2,7 +2,6 @@
   --bs-table-bg: linear-gradient(45deg, rgba(179,220,237,1) 0%, rgba(41,184,229,1) 50%, rgba(188,224,238,1) 100%);
 }
 
-
 td img{
     width: 150px;
 }
@@ -11,12 +10,6 @@ td.hide{
     content-visibility: hidden;
 }
 
-/*.title-and-table-container {
-    flex: 1 1 auto; /* Permitir que crezca y ocupe el espacio disponible */
-    /*overflow-x: auto; /* Permitir el desplazamiento horizontal si es necesario */
- /* }*/
-
-  /* Estilos para el botón */
 button {
   padding: 10px 20px;
   margin-bottom: 10px;
@@ -53,3 +46,128 @@ button:hover {
 }
 
 
+
+header {
+  background-color: #2C5F2D; 
+  color: #FFFFF0; 
+}
+
+/* Lista de Cervezas */
+.cervezas-container {
+  background-color: #F5F5DC; 
+  color: #333333;
+}
+
+.cerveza-estado.sin-stock {
+  color: #FF6961;
+}
+
+.cerveza-estado.en-stock {
+  color: #77DD77; 
+}
+
+/* Carrito de Compras */
+.carrito {
+  background-color: #F5F5DC; 
+  color: #333333; 
+}
+
+.button-carrito {
+  background-color: #FFB74D; 
+  color: #FFFFFF; 
+}
+h1{
+  color: #4B3A3A; 
+  margin-bottom: 20px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #FFFFFF; 
+}
+
+.table th, .table td {
+  border: 1px solid #ddd; 
+  padding: 8px;
+  text-align: left;
+}
+
+.table th {
+  background-color: #2C5F2D;
+  color: white;
+}
+
+.custom-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2; 
+}
+
+/* Estilo para filas sin stock */
+.badge.text-bg-danger {
+  background-color: #FF6961;
+  color: white;
+}
+
+.hide {
+  color: #333333; 
+}
+
+.promocion {
+  color: #77DD77;
+}
+
+/* Botones */
+button {
+  background-color: #D4A373; 
+  color: #FFFFFF; 
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+
+button:hover {
+  background-color: #FFB74D; /* Amarillo Mostaza */
+}
+
+button:disabled {
+  background-color: #ccc; /* Gris claro para botones deshabilitados */
+  cursor: not-allowed;
+}
+
+
+/* Contenedor principal */
+.d-flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-md-row {
+  flex-direction: row;
+}
+
+.align-items-start {
+  align-items: flex-start;
+}
+
+.title-and-table-container {
+  flex: 2;
+  margin-right: 20px;
+}
+
+/* Input Integer */
+app-input-integer {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+/* Imagen de la cerveza */
+img {
+  width: 100px; 
+  height: auto;
+  border-radius: 5px;
+}

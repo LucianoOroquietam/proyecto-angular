@@ -1,6 +1,25 @@
 input{
     max-width: 40px;
     outline: none;
-
-   
+    
 }
+.input-group{
+    flex-wrap: nowrap;
+}
+
+/* Botones de incremento y decremento */
+.increment-btn, .decrement-btn {
+    background-color: #D4A373; /* Ocre */
+    color: #FFFFFF; /* Blanco */
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 0 5px;
+}
+
+.increment-btn:hover, .decrement-btn:hover {
+    background-color: #FFB74D; /* Amarillo Mostaza */
+}
+

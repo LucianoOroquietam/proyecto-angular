@@ -5,9 +5,6 @@
 Este proyecto es una tienda de cerveza desarrollada como parte del trabajo final del seminario de Angular. La aplicación web permite a los usuarios explorar diferentes tipos de cervezas, y realizar compras. 
 La tienda está conectada a una API de cervezas para obtener datos dinámicos y actualizados.
 
-## Link de la API
-https://6677082a145714a1bd738bd9.mockapi.io/api/beers
-
 ## Funcionalidades
 
 - **Exploración de Cervezas**: Los usuarios pueden navegar a través de una lista de cervezas disponibles.
@@ -22,20 +19,23 @@ https://6677082a145714a1bd738bd9.mockapi.io/api/beers
 
 ## Información del Estudiante
 
-- **Nombre y Apellido**: Luciano Oroquieta Merlino
-- **DNI**: 40289369
-- **Email**: oroquietaluciano@gmail.com
-- **Sede**: Tandil
+- **Nombre y Apellido**: Luciano Oroquieta Merlino.
+- **DNI**: 40289369.
+- **Email**: oroquietaluciano@gmail.com.
+- **Sede**: Tandil.
 
 ## Enlace al Proyecto en StackBlitz
 
 [Proyecto en StackBlitz](https://stackblitz.com/~/github.com/LucianoOroquietam/proyecto-angular)
 
+## Link de la API
+https://6677082a145714a1bd738bd9.mockapi.io/api/beers
+
 ## Instrucciones para Ejecutar el Proyecto Localmente
 
 1. Clona este repositorio:
  ```bash
-   git clone https://github.com/LucianoOroquietam/proyecto-angular.git
+git clone https://github.com/LucianoOroquietam/proyecto-angular.git
  ```
 2. Instalar dependencias:
  ```npm
@@ -46,5 +46,4 @@ npm install
 ng serve
 Abre tu navegador y visita http://localhost:4200/.
 ```
-## Contacto
-Si tienes alguna pregunta o necesitas más información, contactame a través de mi email: oroquietaluciano@gmail.com.
+

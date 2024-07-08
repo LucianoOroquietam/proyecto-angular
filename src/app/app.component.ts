@@ -13,6 +13,6 @@ import { CerveceriaAboutComponent } from './cerveceria-about/cerveceria-about.co
 })
 
 export class AppComponent {
-  title = 'La Cava Cervecera';
+  titulo_web = 'La Cava Cervecera';
 }
 

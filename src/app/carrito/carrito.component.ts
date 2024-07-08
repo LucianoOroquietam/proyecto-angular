@@ -24,6 +24,10 @@ export class CarritoComponent implements OnInit{
   }
   ngOnInit(): void {  }
 
+  removeFromCart(beer: Beer): void {
+    this.carritoService.removeFromCart(beer);
+    
+  }
 
 }
 

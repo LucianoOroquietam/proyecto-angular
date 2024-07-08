@@ -25,6 +25,7 @@ export class BeerListComponent implements OnInit {
   cervezasMock: Beer[] = [];
   cervezasApi: Beer[] = [];
   siEdadVerificada: boolean = false;
+  mensajeMaximo: string = '';
 
   constructor(private carritoService: CarritoCervezaService, private ServicioDatosCerveza: DatosCervezasService) { }
 
@@ -63,8 +64,20 @@ export class BeerListComponent implements OnInit {
     }
   }
 
+  removeFromCart(cerveza: Beer): void {
+    const cervezaOriginal = this.cervezasApi.find(c => c.id === cerveza.id);
+    if (cervezaOriginal) {
+      cervezaOriginal.stock += cerveza.cantidad;
+    }
+    this.carritoService.removeFromCart(cerveza);
+    this.actualizareVisibilidadCarrito();
+  }
+
   maxAlcance(m: string) {
-    alert(m)
+    this.mensajeMaximo = m;
+    setTimeout(() => {
+      this.mensajeMaximo = '';
+    }, 3000);
   }
 
   actualizareVisibilidadCarrito() {

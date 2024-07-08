@@ -5,6 +5,12 @@
  
 }
 
+@if (mensajeMaximo) {
+<div class="alert alert-danger" role="alert">
+  {{ mensajeMaximo }}
+</div>
+}
+
 <div class="d-flex flex-column flex-md-row align-items-start"> <!-- Contenedor flex principal -->
   <div class="title-and-table-container me-md-3 mb-2 mb-md-0"> <!-- Contenedor para el título y la tabla -->
 
@@ -39,7 +45,7 @@
           <td>{{ cerveza.tipo }}</td>
           <td>{{ cerveza.precio | currency }}</td>
           @if (cerveza.stock > 0) {
-          <td class="hide">{{ cerveza.stock }}</td>
+          <td class="">{{ cerveza.stock }}</td>
           } @else {
           <td><span class="badge rounded-pill text-bg-danger">Sin stock</span></td>
           }
@@ -56,7 +62,7 @@
           </td>
        
           <td>
-            <button class="active" class="btn" (click)="addToCart(cerveza)">Añadir al carrito</button>
+            <button class="btn btn-primary btn-sm" (click)="addToCart(cerveza)">Añadir al carrito</button>
           </td>
          
         </tr>

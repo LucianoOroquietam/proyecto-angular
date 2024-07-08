@@ -27,18 +27,26 @@ export class CarritoCervezaService {
     if (!item) {
       // item no encontrado, añadir cerveza a la lista
       this._listaCarrito.push({... beer});
-      console.log(`Añadido al carrito: ${beer.nombre}`);
     } else {
       //si ya tenia ese item , le sumo a la cantidad que ya tenia, la nueva cantidad ingresada.
         item.cantidad+=beer.cantidad;
     }
   
-    this.listaCarrito.next(this._listaCarrito); // equivalente al emmit de eventos
+    this.listaCarrito.next(this._listaCarrito); 
     this.calcularTotal();
   }
   
   private calcularTotal() {
     const total = this._listaCarrito.reduce((sum, item) => sum + (item.precio * item.cantidad), 0);
     this.totalCarrito.next(total);
+  }
+
+  removeFromCart(beer: Beer) {
+    const item = this._listaCarrito.find((item) => item.nombre === beer.nombre);
+    if (item) { // Verifica si se ha encontrado el elemento en la lista
+      this._listaCarrito = this._listaCarrito.filter((item) => item.nombre !== beer.nombre);
+      this.listaCarrito.next(this._listaCarrito);
+      this.calcularTotal();
+    }
   }
 }

@@ -1,136 +1,138 @@
-        
-        <header>
-        <div>
-            <img  src="../assets/img/logo.png" alt="">
-            <h1>{{title}}</h1>
+<header>
+    <div>
+        <img src="../assets/img/logo.png" alt="">
+        <h1>{{titulo_web}}</h1>
+    </div>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">{{titulo_web}}</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" [routerLink]="['/']">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" [routerLink]="['/about']">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<main class="container">
+    <router-outlet></router-outlet>
+</main>
+
+<footer class=" text-white pt-5 pb-4">
+    <div class="container text-center text-md-start">
+        <div class="row">
+
+            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                <h5 class="text-uppercase mb-4 font-weight-bold">La cava cervecera</h5>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quia unde similique nam veritatis
+                    voluptatibus quis doloribus,
+                    neque recusandae consequuntur incidunt, velit ab nisi laudantium inventore fugiat provident saepe
+                    consectetur.
+                </p>
+            </div>
+
+
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                <h5 class="text-uppercase mb-4 font-weight-bold">Productos</h5>
+                <p>
+                    <a href="#" class="text-white text-decoration-none">Producto 1</a>
+                </p>
+                <p>
+                    <a href="#" class="text-white text-decoration-none">Producto 2</a>
+                </p>
+                <p>
+                    <a href="#" class="text-white text-decoration-none">Producto 3</a>
+                </p>
+                <p>
+                    <a href="#" class="text-white text-decoration-none">Producto 4</a>
+                </p>
+            </div>
+
+
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                <h5 class="text-uppercase mb-4 font-weight-bold">Links Útiles</h5>
+                <p>
+                    <a href="#" class="text-white text-decoration-none">Tu Cuenta</a>
+                </p>
+                <p>
+                    <a href="#" class="text-white text-decoration-none">Ayuda</a>
+                </p>
+                <p>
+                    <a href="#" class="text-white text-decoration-none">Política de Privacidad</a>
+                </p>
+                <p>
+                    <a href="#" class="text-white text-decoration-none">Términos y Condiciones</a>
+                </p>
+            </div>
+
+
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                <h5 class="text-uppercase mb-4 font-weight-bold">Contacto</h5>
+                <p>
+                    <i class="fas fa-home mr-3"></i> Dirección de la compañía
+                </p>
+                <p>
+                    <i class="fas fa-envelope mr-3"></i> correoejemplo.com
+                </p>
+                <p>
+                    <i class="fas fa-phone mr-3"></i> +123 456 789
+                </p>
+                <p>
+                    <i class="fas fa-print mr-3"></i> +123 456 789
+                </p>
+            </div>
         </div>
 
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">{{title}}</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" [routerLink]="['/']">Home</a>
+        <hr class="mb-4">
+
+
+        <div class="row align-items-center">
+            <div class="col-md-7 col-lg-8">
+                <p>
+                    © 2024 Derechos Reservados:
+                    <a href="#" class="text-white text-decoration-none">
+                        <strong>La cava cervecera</strong>
+                    </a>
+                </p>
+            </div>
+            <div class="col-md-5 col-lg-4">
+                <div class="text-center text-md-right">
+                    <ul class="list-unstyled list-inline">
+                        <li class="list-inline-item">
+                            <a href="#" class="btn-floating btn-sm text-white">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" [routerLink]="['/about']">About</a>
+                        <li class="list-inline-item">
+                            <a href="#" class="btn-floating btn-sm text-white">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" class="btn-floating btn-sm text-white">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" class="btn-floating btn-sm text-white">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
                         </li>
                     </ul>
                 </div>
             </div>
-        </nav>
-    </header>
-        <main class="container">
-            <router-outlet></router-outlet>
-        </main>
-    
-
-        <footer class=" text-white pt-5 pb-4">
-            <div class="container text-center text-md-start">
-                <div class="row">
-                    
-                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                        <h5 class="text-uppercase mb-4 font-weight-bold">La cava cervecera</h5>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos quia unde similique nam veritatis voluptatibus quis doloribus, 
-                            neque recusandae consequuntur incidunt, velit ab nisi laudantium inventore fugiat provident saepe consectetur.
-                        </p>
-                    </div>
-    
-                    
-                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                        <h5 class="text-uppercase mb-4 font-weight-bold">Productos</h5>
-                        <p>
-                            <a href="#" class="text-white text-decoration-none">Producto 1</a>
-                        </p>
-                        <p>
-                            <a href="#" class="text-white text-decoration-none">Producto 2</a>
-                        </p>
-                        <p>
-                            <a href="#" class="text-white text-decoration-none">Producto 3</a>
-                        </p>
-                        <p>
-                            <a href="#" class="text-white text-decoration-none">Producto 4</a>
-                        </p>
-                    </div>
-    
-                 
-                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-                        <h5 class="text-uppercase mb-4 font-weight-bold">Links Útiles</h5>
-                        <p>
-                            <a href="#" class="text-white text-decoration-none">Tu Cuenta</a>
-                        </p>
-                        <p>
-                            <a href="#" class="text-white text-decoration-none">Ayuda</a>
-                        </p>
-                        <p>
-                            <a href="#" class="text-white text-decoration-none">Política de Privacidad</a>
-                        </p>
-                        <p>
-                            <a href="#" class="text-white text-decoration-none">Términos y Condiciones</a>
-                        </p>
-                    </div>
-    
-                 
-                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-                        <h5 class="text-uppercase mb-4 font-weight-bold">Contacto</h5>
-                        <p>
-                            <i class="fas fa-home mr-3"></i> Dirección de la compañía
-                        </p>
-                        <p>
-                            <i class="fas fa-envelope mr-3"></i> correoejemplo.com
-                        </p>
-                        <p>
-                            <i class="fas fa-phone mr-3"></i> +123 456 789
-                        </p>
-                        <p>
-                            <i class="fas fa-print mr-3"></i> +123 456 789
-                        </p>
-                    </div>
-                </div>
-    
-                <hr class="mb-4">
-    
-               
-                <div class="row align-items-center">
-                    <div class="col-md-7 col-lg-8">
-                        <p>
-                            © 2024 Derechos Reservados:
-                            <a href="#" class="text-white text-decoration-none">
-                                <strong>La cava cervecera</strong>
-                            </a>
-                        </p>
-                    </div>
-                    <div class="col-md-5 col-lg-4">
-                        <div class="text-center text-md-right">
-                            <ul class="list-unstyled list-inline">
-                                <li class="list-inline-item">
-                                    <a href="#" class="btn-floating btn-sm text-white">
-                                        <i class="fab fa-facebook-f"></i>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#" class="btn-floating btn-sm text-white">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#" class="btn-floating btn-sm text-white">
-                                        <i class="fab fa-instagram"></i>
-                                    </a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#" class="btn-floating btn-sm text-white">
-                                        <i class="fab fa-linkedin-in"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
+        </div>
+    </div>
+</footer>

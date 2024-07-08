@@ -34,9 +34,9 @@ https://6677082a145714a1bd738bd9.mockapi.io/api/beers
 ## Instrucciones para Ejecutar el Proyecto Localmente
 
 1. Clona este repositorio:
-   ```bash
+ ```bash
    git clone https://github.com/LucianoOroquietam/proyecto-angular.git
-   ```
+ ```
 2. Instalar dependencias:
  ```npm
 npm install

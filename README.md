@@ -2,7 +2,7 @@
 
 ## Descripción del Proyecto
 
-Este proyecto es una tienda de cerveza desarrollada como parte del trabajo final del seminario de Angular. La aplicación web permite a los usuarios explorar diferentes tipos de cervezas, y realizar compras. 
+Este proyecto es una tienda de cerveza ficticia desarrollada como parte del trabajo final del seminario de Angular. La aplicación web permite a los usuarios explorar diferentes tipos de cervezas, y realizar compras. 
 La tienda está conectada a una API de cervezas para obtener datos dinámicos y actualizados.
 
 ## Funcionalidades

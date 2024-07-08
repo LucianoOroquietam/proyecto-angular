@@ -37,7 +37,7 @@
   <p>Pagás: {{ totalCarrito | currency }}</p>
   <p>Envio: <span class="badge text-bg-success">Gratis</span></p>
 </div>
-@if(mostrarBoton){
+@if(!mostrarBoton){
 <button class="btn btn-success" (click)="finalizarCompra()" >Finalizar compra</button>
 }
   @if(compraFinalizada){

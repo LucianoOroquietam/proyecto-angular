@@ -18,7 +18,7 @@ export class CarritoComponent implements OnInit{
   listaCarrito$: Observable<Beer[]>;
   totalCarrito$: Observable<number>;
   compraFinalizada: boolean = false;
-  mostrarBoton: boolean = true;
+  mostrarBoton: boolean = false;
   
   constructor(private carritoService: CarritoCervezaService){
     this.listaCarrito$ = carritoService.listaCarrito.asObservable();
@@ -28,21 +28,22 @@ export class CarritoComponent implements OnInit{
 
   removeFromCart(beer: Beer): void {
     this.carritoService.removeFromCart(beer);
+    this.finalizarCompra();
     
   }
 
 
   finalizarCompra() {
-    this.mostrarBoton = true;
+    //cuando elimine tambien se oculta el boton
+    this.mostrarBoton= true;
     setTimeout(() => {
       // Limpiar el carrito
     this.carritoService.clearCart();
-    this.compraFinalizada = true;
-    this.mostrarBoton= false;
+    this.mostrarBoton= true;
     }, 500);
     setTimeout(()=>{
       window.location.reload();
-    }, 1500)    
+    }, 1000)    
   }
 
 }

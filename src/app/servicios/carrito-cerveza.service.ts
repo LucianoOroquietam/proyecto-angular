@@ -23,19 +23,19 @@ export class CarritoCervezaService {
   addToCart(beer: Beer) {
     // Encuentra si la cerveza ya existe en la listaCarrito
     let item: Beer | undefined = this._listaCarrito.find((v1) => v1.nombre === beer.nombre);
-     
+
     if (!item) {
       // item no encontrado, añadir cerveza a la lista
-      this._listaCarrito.push({... beer});
+      this._listaCarrito.push({ ...beer });
     } else {
       //si ya tenia ese item , le sumo a la cantidad que ya tenia, la nueva cantidad ingresada.
-        item.cantidad+=beer.cantidad;
+      item.cantidad += beer.cantidad;
     }
-  
-    this.listaCarrito.next(this._listaCarrito); 
+
+    this.listaCarrito.next(this._listaCarrito);
     this.calcularTotal();
   }
-  
+
   private calcularTotal() {
     const total = this._listaCarrito.reduce((sum, item) => sum + (item.precio * item.cantidad), 0);
     this.totalCarrito.next(total);

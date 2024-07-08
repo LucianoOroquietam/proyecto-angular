@@ -20,7 +20,7 @@ import { VerificarEdadComponent } from '../verificar-edad/verificar-edad.compone
 export class BeerListComponent implements OnInit {
   mostrarCarrito: boolean = false;
   mostrarError: boolean = false;
-  titulo_cervezas: String = 'Lista De Cervezas';
+  titulo_cervezas: String = 'Cervezas Destacadas';
   mostrarContenido: boolean = false;
   cervezasMock: Beer[] = [];
   cervezasApi: Beer[] = [];

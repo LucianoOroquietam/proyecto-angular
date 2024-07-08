@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { Observable } from 'rxjs';
 
 
+
 @Component({
   selector: 'app-carrito',
   standalone: true,
@@ -16,7 +17,8 @@ export class CarritoComponent implements OnInit{
   titulo:String = "Carrito de compras";
   listaCarrito$: Observable<Beer[]>;
   totalCarrito$: Observable<number>;
-
+  compraFinalizada: boolean = false;
+  mostrarBoton: boolean = true;
   
   constructor(private carritoService: CarritoCervezaService){
     this.listaCarrito$ = carritoService.listaCarrito.asObservable();
@@ -27,6 +29,20 @@ export class CarritoComponent implements OnInit{
   removeFromCart(beer: Beer): void {
     this.carritoService.removeFromCart(beer);
     
+  }
+
+
+  finalizarCompra() {
+    this.mostrarBoton = true;
+    setTimeout(() => {
+      // Limpiar el carrito
+    this.carritoService.clearCart();
+    this.compraFinalizada = true;
+    this.mostrarBoton= false;
+    }, 500);
+    setTimeout(()=>{
+      window.location.reload();
+    }, 1500)    
   }
 
 }

@@ -14,5 +14,6 @@ import { CerveceriaAboutComponent } from './cerveceria-about/cerveceria-about.co
 
 export class AppComponent {
   titulo_web = 'La Cava Cervecera';
+  correo = 'oroquietaluciano@gmail.com';
 }
 

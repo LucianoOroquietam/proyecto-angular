@@ -49,4 +49,10 @@ export class CarritoCervezaService {
       this.calcularTotal();
     }
   }
+
+  clearCart() {
+    this._listaCarrito = [];
+    this.listaCarrito.next(this._listaCarrito);
+    this.totalCarrito.next(0);
+  }
 }

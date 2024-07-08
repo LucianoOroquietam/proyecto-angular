@@ -45,14 +45,14 @@
           <td>{{ cerveza.tipo }}</td>
           <td>{{ cerveza.precio | currency }}</td>
           @if (cerveza.stock > 0) {
-          <td class="">{{ cerveza.stock }}</td>
+          <td class="hide">{{ cerveza.stock }}</td>
           } @else {
           <td><span class="badge rounded-pill text-bg-danger">Sin stock</span></td>
           }
           <td [ngClass]="{ promocion: cerveza.promocion }">
             {{ cerveza.promocion ? "✔" : "❌" }}
           </td>
-          <td><img [src]="cerveza.imagen" [alt]="cerveza.nombre" /></td>
+          <td><img class="img-api" [src]="cerveza.imagen" [alt]="cerveza.nombre" /></td>
           <td>
             @if(cerveza.stock){
             <app-input-integer [(cantidad)]="cerveza.cantidad" [max]="cerveza.stock" (maximoAlcance)="maxAlcance($event)"

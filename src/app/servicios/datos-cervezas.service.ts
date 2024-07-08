@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, tap, map, throwError, catchError } from 'rxjs';
+import { Observable, tap, throwError, catchError } from 'rxjs';
 import { Beer } from '../models/Beer';
 
 const apiUrl = 'https://6677082a145714a1bd738bd9.mockapi.io/api/beers';

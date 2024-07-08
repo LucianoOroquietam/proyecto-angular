@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Beer } from '../models/Beer';
 import { BehaviorSubject } from 'rxjs';
 
-/**
+/**src/app/servicios/carrito-cerveza.service.ts
  * Maneja la logica del carrito
  * 
  */

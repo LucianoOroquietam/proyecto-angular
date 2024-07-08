@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { InputIntegerComponent } from '../input-integer/input-integer.component';
 import { CarritoCervezaService } from '../servicios/carrito-cerveza.service';
 import { CarritoComponent } from "../carrito/carrito.component";
-import { MockCerveza } from '../models/mock-cerveza';
+//import { MockCerveza } from '../models/mock-cerveza';
 import { DatosCervezasService } from '../servicios/datos-cervezas.service';
 import { VerificarEdadComponent } from '../verificar-edad/verificar-edad.component';
 
@@ -21,8 +21,9 @@ export class BeerListComponent implements OnInit {
   mostrarCarrito: boolean = false;
   mostrarError: boolean = false;
   titulo_cervezas: String = 'Cervezas Destacadas';
+  mensaje_error: String = 'No puede comprar 0 cervezas.';
   mostrarContenido: boolean = false;
-  cervezasMock: Beer[] = [];
+  //cervezasMock: Beer[] = [];
   cervezasApi: Beer[] = [];
   siEdadVerificada: boolean = false;
   mensajeMaximo: string = '';
@@ -30,7 +31,7 @@ export class BeerListComponent implements OnInit {
   constructor(private carritoService: CarritoCervezaService, private ServicioDatosCerveza: DatosCervezasService) { }
 
   ngOnInit(): void {
-    this.cervezasMock = MockCerveza;
+    //this.cervezasMock = MockCerveza;
     this.ServicioDatosCerveza.obtenerCervezas().subscribe(data => this.cervezasApi = data);
     if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
       let edadVerificada = localStorage.getItem('edadVerificada');

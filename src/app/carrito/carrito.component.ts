@@ -29,21 +29,13 @@ export class CarritoComponent implements OnInit{
   removeFromCart(beer: Beer): void {
     this.carritoService.removeFromCart(beer);
     this.ocultarBotonAlEliminar();
+    
   }
 
   ocultarBotonAlEliminar(){
-    this.mostrarBoton = true;
-    this.mostrarBotonFinalizarCompra();
-  }
-
-  mostrarBotonFinalizarCompra(){
     this.mostrarBoton = false;
   }
 
-
-  if () {
-    
-  }
   finalizarCompra() {
     setTimeout(() => {
       // Limpiar el carrito

@@ -38,10 +38,10 @@
   <p>Envio: <span class="badge text-bg-success">Gratis</span></p>
 </div>
 @if(!mostrarBoton){
-<button class="btn btn-success" (click)="finalizarCompra()" >Finalizar compra</button>
+<button class="btn btn-success" (click)="finalizarCompra()">Finalizar compra</button>
 }
-  @if(compraFinalizada){
-    <div class="alert alert-success" role="alert">
-      Compra finalizada
-    </div>
-  }
+@if(compraFinalizada){
+<div class="alert alert-success" role="alert">
+  Compra finalizada
+</div>
+}

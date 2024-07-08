@@ -29,7 +29,6 @@ export class CarritoComponent implements OnInit{
   removeFromCart(beer: Beer): void {
     this.carritoService.removeFromCart(beer);
     this.ocultarBotonAlEliminar();
-    
   }
 
   ocultarBotonAlEliminar(){
@@ -42,11 +41,15 @@ export class CarritoComponent implements OnInit{
   }
 
 
+  if () {
+    
+  }
   finalizarCompra() {
     setTimeout(() => {
       // Limpiar el carrito
     this.carritoService.clearCart();
     this.mostrarBoton= true;
+    this.compraFinalizada = true;
     }, 500);
     setTimeout(()=>{
       window.location.reload();

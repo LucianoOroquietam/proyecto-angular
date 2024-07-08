@@ -59,7 +59,7 @@ export class BeerListComponent implements OnInit {
   }
 
   actualizareVisibilidadCarrito() {
-    this.mostrarCarrito = this.cervezasMock.some((cerveza => cerveza.cantidad > 0));
+    this.mostrarCarrito = this.cervezasApi.some((cerveza => cerveza.cantidad > 0));
   }
   cantidadModificada() {
     this.actualizareVisibilidadCarrito();

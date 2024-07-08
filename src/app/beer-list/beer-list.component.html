@@ -32,7 +32,7 @@
         </tr>
       </thead>
       <tbody>
-        @for(cerveza of cervezasMock; track cerveza.id) {
+        @for(cerveza of cervezasApi; track cerveza.id) {
         <tr>
           <th scope="row">{{ cerveza.id }}</th>
           <td>{{ cerveza.nombre }}</td>
@@ -46,7 +46,7 @@
           <td [ngClass]="{ promocion: cerveza.promocion }">
             {{ cerveza.promocion ? "✔" : "❌" }}
           </td>
-          <td><img [src]="cerveza.img" [alt]="cerveza.nombre" /></td>
+          <td><img [src]="cerveza.imagen" [alt]="cerveza.nombre" /></td>
           <td>
             @if(cerveza.stock){
             <app-input-integer [(cantidad)]="cerveza.cantidad" [max]="cerveza.stock" (maximoAlcance)="maxAlcance($event)"

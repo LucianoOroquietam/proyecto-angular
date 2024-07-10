@@ -109,8 +109,7 @@ h1{
 }
 
 /* Botones */
-button {
-  background-color: #D4A373; 
+button { 
   color: #FFFFFF; 
   padding: 10px 15px;
   cursor: pointer;
@@ -119,43 +118,43 @@ button {
 }
 
 
-button:hover {
-  background-color: #FFB74D; /* Amarillo Mostaza */
-}
-
-button:disabled {
-  background-color: #ccc; /* Gris claro para botones deshabilitados */
-  cursor: not-allowed;
+button , button:hover, .table th {
+  background-color: #2C5F2D;
 }
 
 
 /* Contenedor principal */
+
 .d-flex {
   display: flex;
-}
-
-.flex-column {
   flex-direction: column;
 }
 
-.flex-md-row {
-  flex-direction: row;
-}
-
-.align-items-start {
-  align-items: flex-start;
+@media (min-width: 768px) {
+  .d-flex {
+    flex-direction: row;
+  }
 }
 
 .title-and-table-container {
-  flex: 2;
-  margin-right: 20px;
+  flex: 1;
+  margin-right: 1rem;
 }
 
-/* Input Integer */
-app-input-integer {
-  display: inline-block;
-  margin-right: 10px;
+.cart-container {
+  flex: 0 0 300px; 
+  margin-left: 1rem;
 }
+
+.custom-table {
+  width: 100%;
+}
+
+.img-api {
+  max-width: 100px; 
+  height: auto;
+}
+
 
 /* Imagen de la cerveza */
 img {

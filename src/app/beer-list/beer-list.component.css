@@ -49,14 +49,6 @@ header {
   color: #333333;
 }
 
-.cerveza-estado.sin-stock {
-  color: #FF6961;
-}
-
-.cerveza-estado.en-stock {
-  color: #77DD77; 
-}
-
 
 td[_ngcontent-ng-c1572017559] img[_ngcontent-ng-c1572017559] {
   width: 115px;
@@ -86,7 +78,6 @@ h1{
 }
 
 .table th {
-  background-color: #2C5F2D;
   color: white;
 }
 
@@ -110,7 +101,6 @@ h1{
 
 /* Botones */
 button {
-  background-color: #D4A373; 
   color: #FFFFFF; 
   padding: 10px 15px;
   cursor: pointer;
@@ -119,20 +109,11 @@ button {
 }
 
 
-button:hover {
-  background-color: #FFB74D; /* Amarillo Mostaza */
+button:hover, button , table th{
+  background-color: #2C5F2D;
 }
-
-button:disabled {
-  background-color: #ccc; /* Gris claro para botones deshabilitados */
-  cursor: not-allowed;
-}
-
 
 /* Contenedor principal */
-.d-flex {
-  display: flex;
-}
 
 .flex-column {
   flex-direction: column;
@@ -146,16 +127,43 @@ button:disabled {
   align-items: flex-start;
 }
 
+
+.d-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .d-flex {
+    flex-direction: row;
+  }
+}
+
+.title-and-table-container {
+  flex: 1;
+  margin-right: 1rem;
+}
+
+.cart-container {
+  flex: 0 0 300px; /* Ajusta el ancho según sea necesario */
+  margin-left: 1rem;
+}
+
+.custom-table {
+  width: 100%;
+}
+
+.img-api {
+  max-width: 100px; /* Ajusta según sea necesario */
+  height: auto;
+}
+
+
 .title-and-table-container {
   flex: 2;
   margin-right: 20px;
 }
 
-/* Input Integer */
-app-input-integer {
-  display: inline-block;
-  margin-right: 10px;
-}
 
 /* Imagen de la cerveza */
 img {

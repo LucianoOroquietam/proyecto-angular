@@ -9,7 +9,7 @@ input{
 
 /* Botones de incremento y decremento */
 .increment-btn, .decrement-btn {
-    background-color: #2C5F2D; /* Ocre */
+    background-color: #D4A373; /* Ocre */
     color: #FFFFFF; /* Blanco */
     border: none;
     padding: 5px 10px;
@@ -20,6 +20,6 @@ input{
 }
 
 .increment-btn:hover, .decrement-btn:hover {
-    background-color: #2C5F2D; 
+    background-color: #FFB74D; /* Amarillo Mostaza */
 }
 

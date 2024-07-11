@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CarritoCervezaService } from '../servicios/carrito-cerveza.service';
-import { Beer } from '../models/Beer';
+import { CarritoCervezaService } from '../../services/carrito-cerveza.service';
+import { Beer } from '../../models/Beer';
 import { CommonModule } from '@angular/common';
 import { Observable } from 'rxjs';
 

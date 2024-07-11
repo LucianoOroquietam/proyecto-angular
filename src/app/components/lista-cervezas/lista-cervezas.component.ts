@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Beer } from '../models/Beer';
+import { Beer } from '../../models/Beer';
 import { FormsModule } from '@angular/forms';
 import { InputIntegerComponent } from '../input-integer/input-integer.component';
-import { CarritoCervezaService } from '../servicios/carrito-cerveza.service';
+import { CarritoCervezaService } from '../../services/carrito-cerveza.service';
 import { CarritoComponent } from "../carrito/carrito.component";
 //import { MockCerveza } from '../models/mock-cerveza';
-import { DatosCervezasService } from '../servicios/datos-cervezas.service';
+import { DatosCervezasService } from '../../services/datos-cervezas.service';
 import { VerificarEdadComponent } from '../verificar-edad/verificar-edad.component';
 
 @Component({
   selector: 'app-beer-list',
   standalone: true,
-  templateUrl: './beer-list.component.html',
-  styleUrl: './beer-list.component.css',
+  templateUrl: './lista-cervezas.component.html',
+  styleUrl: './lista-cervezas.component.css',
   imports: [CommonModule, FormsModule, InputIntegerComponent, CarritoComponent, VerificarEdadComponent]
 })
 

@@ -110,6 +110,7 @@ h1{
 
 /* Botones */
 button { 
+  background-color: #198754;
   color: #FFFFFF; 
   padding: 10px 15px;
   cursor: pointer;
@@ -118,10 +119,9 @@ button {
 }
 
 
-button , button:hover, .table th {
+button:hover, .table th {
   background-color: #2C5F2D;
 }
-
 
 /* Contenedor principal */
 

@@ -8,6 +8,7 @@ input{
 }
 
 .increment-btn, .decrement-btn {
+    background-color: #198754;
     color: #FFFFFF;
     border: none;
     padding: 5px 10px;
@@ -17,7 +18,7 @@ input{
     margin: 0 5px;
 }
 
-.increment-btn:hover, .decrement-btn:hover, .increment-btn, .decrement-btn {
+.increment-btn:hover, .decrement-btn:hover {
     background-color: #2C5F2D; 
 }
 

@@ -1,6 +1,5 @@
 header {
-    background-color: #2C5F2D; /* Verde Botella */
-    color: #FFFFF0; /* Marfil */
+    color: #FFFFF0; 
     padding: 10px;
     text-align: center;
     font-size: 18px;
@@ -10,10 +9,7 @@ header img{
     width: 100px;
 }
 
-footer {
-    background-color: #2C5F2D; /* Verde Botella Oscuro */}
-
-footer a:hover {
-    color: #FFB74D !important; /* Amarillo Mostaza */
-    text-decoration: underline;
+footer, header {
+    background-color: #2C5F2D; 
 }
+

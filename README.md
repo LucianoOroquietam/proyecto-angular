@@ -49,3 +49,7 @@ ng serve
 Abre tu navegador y visita http://localhost:4200/.
 ```
 
+## Bugs y Mejoras a Futuro
+
+- **Botón "Finalizar compra"**: Actualmente, el botón "Finalizar compra" se muestra incluso cuando no hay artículos en el carrito. 
+- **Manejo del stock"**: Cuando se agrega una cerveza al carrito y se descuenta del stock, al eliminarla del carrito, la cantidad en el stock no vuelve a su valor original.

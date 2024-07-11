@@ -9,7 +9,7 @@ La tienda está conectada a una API de cervezas para obtener datos dinámicos y 
 
 - **Exploración de Cervezas**: Los usuarios pueden navegar a través de una lista de cervezas disponibles.
 - **Carrito de Compras**: Los usuarios pueden agregar cervezas a un carrito de compras y proceder a la compra.
-- **Verificación de Edad:**: Se utiliza localStorage para simular la verificación de edad. Si el usuario confirma que es mayor de 18 años, no necesita volver a verificar.
+- **Verificación de Edad**: Se utiliza localStorage para simular la verificación de edad. Si el usuario confirma que es mayor de 18 años, no necesita volver a verificar.
 - **Simulación de Compra**: Para simular una compra, al presionar el botón "Finalizar compra", la aplicación recarga la página con window.location.reload().
 
 ## Tecnologías Utilizadas
